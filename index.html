@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>☢ ATOMIC SHOP — Premium Metro Shop</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');
+:root{--bg:#070907;--panel:#111510;--panel2:#161b13;--line:#293022;--gold:#d5a84b;--green:#9dbb55;--muted:#899080}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:#f1f2ed;font-family:Inter,Arial,sans-serif}
+body:before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(circle at 10% 10%,#667d2b2b,transparent 28%),radial-gradient(circle at 90% 15%,#c38d3024,transparent 25%),linear-gradient(135deg,#0b0e09,#060806 60%,#12100a)}
+body:after{content:"";position:fixed;inset:0;z-index:-1;opacity:.07;background:repeating-linear-gradient(0deg,#fff 0 1px,transparent 1px 4px)}
+a{color:inherit}.top{position:sticky;top:0;z-index:20;background:#080a08e8;border-bottom:1px solid #ffffff12;backdrop-filter:blur(16px)}.nav{max-width:1200px;margin:auto;padding:16px 22px;display:flex;align-items:center;gap:28px}.brand{font-weight:900;font-size:21px;letter-spacing:1.5px;white-space:nowrap}.brand span{color:var(--gold)}nav{display:flex;gap:20px;margin:auto}nav a{text-decoration:none;color:#aeb3a8;font-size:13px;font-weight:700}nav a:hover{color:#fff}.cartBtn{border:1px solid #ffffff18;background:#ffffff08;border-radius:10px;padding:10px 13px;cursor:pointer;color:#fff}.cartBtn b{color:var(--gold)}
+.hero{max-width:1200px;margin:auto;padding:90px 22px 55px;display:grid;grid-template-columns:1fr .8fr;gap:40px;align-items:center}.eyebrow{color:var(--gold);font-size:12px;font-weight:900;letter-spacing:3px}.hero h1{font-size:clamp(52px,8vw,92px);line-height:.88;letter-spacing:-5px;margin:17px 0}.hero h1 span{color:var(--gold)}.hero p{color:#a1a69b;line-height:1.7;max-width:590px}.actions{display:flex;gap:10px;margin-top:27px;flex-wrap:wrap}.btn{border:0;border-radius:9px;padding:13px 17px;font-weight:900;cursor:pointer;text-decoration:none}.primary{background:var(--gold);color:#151108}.secondary{background:#ffffff08;border:1px solid #ffffff18;color:#eee}.radar{height:390px;position:relative;border:1px solid #ffffff12;border-radius:22px;background:radial-gradient(circle,#26321c,#0d100c 58%);overflow:hidden}.radar:before{content:"";position:absolute;inset:45px;border:1px solid #b2c56d30;border-radius:50%;box-shadow:0 0 70px #92a84c15}.radar:after{content:"";position:absolute;inset:100px;border:1px solid #b2c56d24;border-radius:50%}.rline{position:absolute;left:50%;top:20px;bottom:20px;width:1px;background:#b2c56d25}.rline2{position:absolute;top:50%;left:20px;right:20px;height:1px;background:#b2c56d25}.dot{position:absolute;width:10px;height:10px;border-radius:50%;background:var(--gold);box-shadow:0 0 18px var(--gold)}.d1{left:28%;top:35%}.d2{right:25%;top:62%}.d3{left:54%;bottom:24%}
+main section{max-width:1200px;margin:auto;padding:45px 22px}.sectionHead{display:flex;justify-content:space-between;align-items:end;gap:15px;margin-bottom:22px}.sectionHead h2{margin:4px 0;font-size:32px}.muted{color:var(--muted);font-size:12px;letter-spacing:1.5px}
+.tabs{display:flex;gap:8px;overflow:auto;padding-bottom:10px}.tab{white-space:nowrap;border:1px solid #ffffff13;background:#ffffff06;color:#aeb4a8;border-radius:9px;padding:11px 14px;font-weight:800;cursor:pointer}.tab.active,.tab:hover{background:var(--gold);color:#171209;border-color:var(--gold)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.card{border:1px solid #ffffff11;background:linear-gradient(145deg,var(--panel2),var(--panel));border-radius:13px;overflow:hidden;transition:.22s}.card:hover{transform:translateY(-4px);border-color:#d5a84b55}.image{height:175px;background:radial-gradient(circle at 50% 45%,#414b30,#131711 66%);display:flex;align-items:center;justify-content:center;font-size:64px;position:relative}.placeholder{font-size:11px;color:#777e70;position:absolute;bottom:10px;left:0;right:0;text-align:center;letter-spacing:1px}.info{padding:14px}.type{color:#7e8875;font-size:10px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase}.name{font-size:16px;font-weight:800;margin:7px 0}.row{display:flex;justify-content:space-between;align-items:center;gap:8px}.price{font-weight:900;color:#e0b35a}.buy{border:0;border-radius:7px;background:#d5a84b;color:#161107;padding:9px 10px;font-weight:900;cursor:pointer}.buy:hover{filter:brightness(1.1)}
+.infoBanner{margin-top:25px;padding:24px;border:1px solid #d5a84b2d;background:#d5a84b0a;border-radius:13px;display:flex;justify-content:space-between;gap:20px;align-items:center}.infoBanner h3{margin:0 0 7px}.infoBanner p{margin:0;color:#8e9589;line-height:1.6}
+footer{margin-top:50px;padding:35px 22px;text-align:center;border-top:1px solid #ffffff12;color:#72796d;font-size:12px;line-height:1.8}
+.modal{display:none;position:fixed;inset:0;z-index:50;background:#000b;backdrop-filter:blur(7px);align-items:center;justify-content:center;padding:18px}.modal.show{display:flex}.box{width:min(560px,100%);background:#11150f;border:1px solid #ffffff18;border-radius:16px;padding:22px;box-shadow:0 25px 80px #000}.boxHead{display:flex;justify-content:space-between;align-items:center}.close{background:none;border:0;color:#aaa;font-size:24px;cursor:pointer}.cartItem{display:flex;justify-content:space-between;padding:13px 0;border-bottom:1px solid #ffffff0e}.total{display:flex;justify-content:space-between;margin:18px 0;font-size:18px;font-weight:900}.form{display:grid;gap:9px}.form input,.form select{width:100%;padding:12px;border:1px solid #ffffff15;background:#080a08;color:#eee;border-radius:8px}.empty{color:#7e8579;text-align:center;padding:25px}.toast{position:fixed;right:18px;bottom:18px;background:var(--gold);color:#171209;font-weight:900;padding:13px 17px;border-radius:9px;transform:translateY(100px);transition:.25s;z-index:100}.toast.show{transform:none}
+@media(max-width:850px){nav{display:none}.hero{grid-template-columns:1fr}.radar{height:300px}.grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:520px){.grid{grid-template-columns:1fr}.hero h1{letter-spacing:-4px}.sectionHead{display:block}.infoBanner{display:block}}
+</style>
+</head>
+<body>
+<header class="top"><div class="nav"><div class="brand">☢ ATOMIC <span>SHOP</span></div><nav><a href="#shop">МАГАЗИН</a><a href="#armor">БРОНЯ</a><a href="#weapons">ОРУЖИЕ</a><a href="#extras">ДОПЫ</a><a href="#escorts">СОПРОВОДЫ</a><a href="#support">ПОДДЕРЖКА</a></nav><button class="cartBtn" onclick="openCart()">🛒 КОРЗИНА <b id="cartCount">0</b></button></div></header>
+
+<div class="hero"><div><div class="eyebrow">PREMIUM METRO SHOP · FAST • SAFE • CHEAP</div><h1>ATOMIC<br><span>SHOP</span></h1><p>Магазин для игроков Metro Royale. Выбирай экипировку, оружие, допы и сопроводы. Карточки уже готовы под твои будущие картинки.</p><div class="actions"><a class="btn primary" href="#shop">ОТКРЫТЬ МАГАЗИН</a><button class="btn secondary" onclick="openCart()">МОЯ КОРЗИНА</button><a class="btn secondary" href="https://t.me/AT0M1C_C4" target="_blank">📡 ПОДДЕРЖКА</a></div></div><div class="radar"><div class="rline"></div><div class="rline2"></div><i class="dot d1"></i><i class="dot d2"></i><i class="dot d3"></i></div></div>
+
+<main id="shop">
+<section id="armor"><div class="sectionHead"><div><div class="muted">🛡 METRO GEAR</div><h2>БРОНЯ</h2></div><div class="muted">ЦЕНЫ В ₴</div></div><div class="grid" id="armorGrid"></div></section>
+<section id="weapons"><div class="sectionHead"><div><div class="muted">🔫 LOADOUT</div><h2>ОРУЖИЕ</h2></div></div><div class="tabs" id="weaponTabs"></div><div class="grid" id="weaponGrid"></div></section>
+<section id="extras"><div class="sectionHead"><div><div class="muted">🎒 UTILITY</div><h2>ДОПЫ</h2></div></div><div class="grid" id="extrasGrid"></div></section>
+<section id="escorts"><div class="sectionHead"><div><div class="muted">🚶 SERVICE</div><h2>СОПРОВОДЫ</h2></div></div><div class="grid" id="escortGrid"></div>
+<div class="infoBanner"><div><h3>🔥 СУПРОВОД + ВЕЩИ</h3><p>Готовый комплект сопровождения с вещами.</p></div><button class="btn primary" onclick="addItem('Сопровод + вещи',120)">₴ 120 · ДОБАВИТЬ</button></div></section>
+
+<section id="support">
+  <div class="sectionHead">
+    <div><div class="muted">TELEGRAM BOT</div><h2>📡 ПОДДЕРЖКА</h2></div>
+    <div class="muted">ATOMIC SUPPORT</div>
+  </div>
+  <div class="infoBanner">
+    <div>
+      <h3>☢️ Нужна помощь с заказом?</h3>
+      <p>Напиши в Telegram. Укажи свой ник, товар и способ оплаты — продавец поможет с оформлением.</p>
+    </div>
+    <div class="actions" style="margin:0">
+      <a class="btn primary" href="https://t.me/AT0M1C_C4" target="_blank">👑 НАПИСАТЬ OWNER</a>
+      <a class="btn secondary" href="https://t.me/K0dami" target="_blank">⚡ НАПИСАТЬ SELLER</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>☢ ATOMIC SHOP · PREMIUM METRO SHOP<br>Оплата: карта / звёзды · Owner: @AT0M1C_C4 · Seller: @K0dami<br><br>Неофициальный фан-магазин. Названия игровых объектов используются в рамках фан-проекта.</footer>
+
+<div class="modal" id="modal"><div class="box"><div class="boxHead"><h2>🛒 Корзина</h2><button class="close" onclick="closeCart()">×</button></div><div id="cartItems"></div><div class="total"><span>Итого</span><span id="total">₴ 0</span></div><div class="form"><input id="nick" placeholder="Ваш игровой ник / Telegram"><select id="pay"><option>💳 Оплата по карте</option><option>⭐ Оплата за звёзды</option></select><button class="btn primary" onclick="checkout()">ОФОРМИТЬ ЗАКАЗ</button></div></div></div>
+<div class="toast" id="toast">Добавлено в корзину</div>
+
+<script>
+const products=[
+{name:'Броник',cat:'Обычная',price:15,icon:'🦺',group:'armor'},
+{name:'Каска',cat:'Обычная',price:10,icon:'⛑️',group:'armor'},
+{name:'Броник',cat:'Кобра',price:20,icon:'🦺',group:'armor'},
+{name:'Каска',cat:'Кобра',price:15,icon:'⛑️',group:'armor'},
+{name:'Броник',cat:'Сталик',price:25,icon:'🦺',group:'armor'},
+{name:'Каска',cat:'Сталик',price:20,icon:'⛑️',group:'armor'},
+{name:'МК-Вышка',cat:'МК',price:15,icon:'⚔️',group:'weapon',weapon:'МК'},
+{name:'МК-Сталик',cat:'МК',price:20,icon:'⚔️',group:'weapon',weapon:'МК'},
+{name:'МК-Кобра',cat:'МК',price:25,icon:'⚔️',group:'weapon',weapon:'МК'},
+{name:'Вышка',cat:'Калаш',price:15,icon:'🔥',group:'weapon',weapon:'Калаш'},
+{name:'Сталик',cat:'Калаш',price:20,icon:'🔥',group:'weapon',weapon:'Калаш'},
+{name:'Кобра',cat:'Калаш',price:20,icon:'🔥',group:'weapon',weapon:'Калаш'},
+{name:'Радка',cat:'Допы',price:5,icon:'☢️',group:'extras'},
+{name:'Теплак',cat:'Допы',price:7,icon:'🌡️',group:'extras'},
+{name:'Рюкзак',cat:'Допы',price:10,icon:'🎒',group:'extras'},
+{name:'Восстание-зомби',cat:'Сопроводы',price:5,icon:'🧟',group:'escort'},
+{name:'5 карта',cat:'Сопроводы',price:30,icon:'🗺️',group:'escort'},
+{name:'7 карта',cat:'Сопроводы',price:60,icon:'🗺️',group:'escort'},
+{name:'8 карта',cat:'Сопроводы',price:100,icon:'🗺️',group:'escort'}
+];
+let cart=[], weaponFilter='Все';
+const $=id=>document.getElementById(id);
+function card(p){return `<article class="card"><div class="image">${p.icon}<span class="placeholder">КАРТИНКА ТОВАРА</span></div><div class="info"><div class="type">${p.cat}</div><div class="name">${p.name}</div><div class="row"><span class="price">₴ ${p.price}</span><button class="buy" onclick="addItem('${p.name.replaceAll("'","\\\\'")}',${p.price})">В КОРЗИНУ</button></div></div></article>`}
+function render(){ $('armorGrid').innerHTML=products.filter(p=>p.group==='armor').map(card).join('');$('extrasGrid').innerHTML=products.filter(p=>p.group==='extras').map(card).join('');$('escortGrid').innerHTML=products.filter(p=>p.group==='escort').map(card).join('');renderWeapons();renderTabs()}
+function renderTabs(){let cats=['Все','МК','Калаш'];$('weaponTabs').innerHTML=cats.map(c=>`<button class="tab ${weaponFilter===c?'active':''}" onclick="setWeapon('${c}')">${c}</button>`).join('')}
+function renderWeapons(){$('weaponGrid').innerHTML=products.filter(p=>p.group==='weapon'&&(weaponFilter==='Все'||p.weapon===weaponFilter)).map(card).join('')}
+function setWeapon(x){weaponFilter=x;renderWeapons();renderTabs()}
+function addItem(name,price){cart.push({name,price});updateCart();toast('Добавлено в корзину')}
+function updateCart(){$('cartCount').textContent=cart.length;let total=cart.reduce((a,b)=>a+b.price,0);$('total').textContent='₴ '+total; $('cartItems').innerHTML=cart.length?cart.map((x,i)=>`<div class="cartItem"><span>${x.name}</span><b>₴ ${x.price}</b></div>`).join(''):'<div class="empty">Корзина пока пустая</div>'}
+function openCart(){$('modal').classList.add('show');updateCart()}function closeCart(){$('modal').classList.remove('show')}
+function checkout(){
+  if(!cart.length){toast('Сначала добавьте товар');return}
+  let nick=$('nick').value.trim();
+  if(!nick){$('nick').focus();toast('Укажите ник или Telegram');return}
+  let payment=$('pay').value;
+  let total=cart.reduce((a,b)=>a+b.price,0);
+  let items=cart.map(x=>'• '+x.name+' — '+x.price+' ₴').join('\\n');
+  let message='☢️ ATOMIC SHOP — НОВЫЙ ЗАКАЗ\\n\\n👤 Клиент: '+nick+'\\n\\n'+items+'\\n\\n💰 Итого: '+total+' ₴\\n💳 Оплата: '+payment;
+  window.open('https://t.me/AT0M1C_C4?text='+encodeURIComponent(message),'_blank');
+}
+function toast(msg){$('toast').textContent=msg;$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),1400)}
+render();updateCart();
+</script>
+</body></html>
